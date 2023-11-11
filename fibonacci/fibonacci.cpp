@@ -25,7 +25,26 @@ Explanation: F(4) = F(3) + F(2) = 2 + 1 = 3.
 
 */
 
-int fib(int n)
+#include <iostream>
+
+using namespace std;
+
+class Solution
 {
+public:
+    int fib(int n)
+    {
+        if (n == 0 || n == 1)
+        {
+            return n;
+        }
+        return fib(n-1) + fib(n-2);
+    }
+};
+
+int main()
+{
+    Solution solution = Solution();
+    cout << solution.fib(4);
     return 0;
 }
