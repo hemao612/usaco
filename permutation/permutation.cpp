@@ -23,6 +23,29 @@ Constraints:
 -10 <= nums[i] <= 10
 All the integers of nums are unique.
 */
+#include <iostream>
+#include <vector>
 
- vector<vector<int>> permute(vector<int> &nums){   
-    }
+using namespace std;
+
+void ans(vector<int> perm, vector<int> c, int n){
+   if (perm.size() == n){
+      return;
+   }
+   else{
+      for (int i = 0; i < n ; i++){
+         if (c[i]) continue;
+         c[i] = true;
+         perm.push_back(i);
+         ans(perm, c, n);
+         c[i] = false;
+         perm.pop_back();
+      }
+   }
+   return;
+}
+
+int main() {
+   cout<<"================";
+   return 0;
+}
