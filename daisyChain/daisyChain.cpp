@@ -39,10 +39,12 @@ int main(){
                 sum+=a[k] ;
             }
             int avg = 0;
+            if(sum % (j-i+1) != 0) continue;
             avg = sum / (j-i+1);
             for(int k = i ;k <= j ; k++){
                 if(a[k] == avg){
                     count++;
+                    break;
                 }
             }
         }
