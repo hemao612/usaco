@@ -17,3 +17,24 @@ Elsie 有三个正整数 A、B和 C（A≤B≤C）。这些数字是保密的，
 测试点 2-3 满足 C≤50。
 测试点 4-10 没有额外限制。
 */
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int main(){
+    //七个数A、B、C、A+B、B+C、C+A和 A+B+C
+    int A,B,C;
+    int a[7];
+    
+    for(int i = 0 ; i < 7 ; i++){
+        cin >> a[i] ;
+    }
+    
+    sort(a,a+7);//前两小的一定是abc其中两个，最大的一定是a+b+c
+    A = a[0];
+    B = a[1];
+    C = a[6] - B - A ;
+    cout << A << " " << B << " " << C ;
+    return 0;
+}
