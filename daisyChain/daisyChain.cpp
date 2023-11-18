@@ -18,3 +18,36 @@ Bessie 的照片中有几张存在平均的花？
 6
 每张仅包含一朵花的照片均会被计入答案（在这个样例中有 4 张）。另外，在这个样例中 (i,j)为 (1,2)和 (2,4)所对应的照片也存在平均的花。
 */
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int main(){
+    int n;
+    cin >> n ;
+    int a[n];
+    int sum = 0;
+    int count = 0;
+    for (int i = 0; i < n; i++){
+        cin >> a[i] ;
+    }
+    for (int i = 0; i < n; i++){
+        for (int j = 0 ; j < n; j++){
+            int sum = 0;
+            for(int k = i ; k <= j; k++){
+                sum+=a[k] ;
+            }
+            int avg = 0;
+            avg = sum / (j-i+1);
+            for(int k = i ;k <= j ; k++){
+                if(a[k] == avg){
+                    count++;
+                }
+            }
+        }
+        
+    }
+    cout << count ;
+    return 0;
+}
