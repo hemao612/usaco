@@ -4,5 +4,4 @@
 
 vector<vector<string>> solveNQueens(int n)
 {
-
 }
