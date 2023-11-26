@@ -1,5 +1,5 @@
-/*
-Farmer John has recently acquired N new cows (3≤N≤5×105), each of whose breed is either Guernsey or Holstein.
+/* 
+ Farmer John has recently acquired N new cows (3≤N≤5×105), each of whose breed is either Guernsey or Holstein.
 The cows are currently standing in a line, and Farmer John wants take a photo of every sequence of three or more
 consecutive cows. However, he doesn't want to take a photo in which there is exactly one cow whose breed is
 Guernsey or exactly one cow whose breed is Holstein --- he reckons this singular cow would feel isolated
@@ -12,7 +12,7 @@ Two photos are different if they start or end at different cows in the lineup.
 INPUT FORMAT (input arrives from the terminal / stdin):
 The first line of input contains N.
 
-The second line contains a string of N characters. The ith character is G if the ith cow in the line is a Guernsey.
+The second line contains a string of N characters. The I'th character is G if the ith cow in the line is a Guernsey.
 Otherwise, it will be an H and the ith cow is a Holstein.
 
 OUTPUT FORMAT (print output to the terminal / stdout):
@@ -43,4 +43,35 @@ Problem credits: Nick Wu*/
 using namespace std;
 
 int main()
-{}
+{
+    int n ;
+    cin >> n ;
+    string gc;
+    cin >> gc ;
+    int count = 0 ;
+    int ng = 0 ;
+    int nh = 0 ;
+    for (int i = 0 ; i < n ; i++)
+    {
+        for (int j = i + 1 ; j < n ; j++)
+        {
+            for (int k = i ; k <= j ; k++)//统计h和g的数量
+            {
+                if (gc[k] == 'G')
+                {
+                    ng++;
+                }
+                else
+                {
+                    nh++;
+                }
+            }
+            if (ng == 1 || nh == 1 && j - i + 1 >= 3)
+            {
+                count++;
+            }
+        }    
+    }
+    cout << count ;
+    return 0;
+}
