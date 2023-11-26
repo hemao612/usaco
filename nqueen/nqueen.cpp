@@ -2,6 +2,16 @@
 题目地址
  https://leetcode.com/problems/n-queens/
 */
+
+ 
+// *   总结Conclusion
+// ! 1. 终止条件
+// ! 2. 记录当前状态的数组
+// ! 3. 是在每次回溯的时候，都要把当前状态的数组还原成上一次的状态
+// ! 4. 递归的参数是什么，递归的返回值是什么
+
+// todo 把这个题完成并且让他输出的是所有的解（答案）。
+
 #include <iostream>
 #include <vector>
 
